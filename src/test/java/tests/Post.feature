@@ -12,7 +12,7 @@ Feature: Post API Demo
   # Simple Post request
   Scenario:  Post Demo 1
     Given url 'https://reqres.in/api/users'
-    And request {"name": "Sinan","job": "Soganci"}
+    And request {"name": "Ogulcan","job": "Aydin"}
     When method POST
     Then status 201
     And print response
@@ -20,7 +20,7 @@ Feature: Post API Demo
   #Post with background
   Scenario:  Post Demo 2
     Given path '/api/users'
-    And request {"name": "Sinan","job": "Soganci"}
+    And request {"name": "Ogulcan","job": "Aydin"}
     When method POST
     Then status 201
     And print response
@@ -28,16 +28,16 @@ Feature: Post API Demo
   #Post with assertions
   Scenario:  Post Demo 3
     Given path '/api/users'
-    And request {"name": "Sinan","job": "Soganci"}
+    And request {"name": "Ogulcan","job": "Aydin"}
     When method POST
     Then status 201
     And print response
-    And match response == {"name": "Sinan","job": "Soganci","id": "#string","createdAt": "#ignore"}
+    And match response == {"name": "Ogulcan","job": "Aydin","id": "#string","createdAt": "#ignore"}
 
   #Post with read "response" from file "response1.json"
   Scenario:  Post Demo 4
     Given path '/api/users'
-    And request {"name": "Sinan","job": "Soganci"}
+    And request {"name": "Ogulcan","job": "Aydin"}
     When method POST
     Then status 201
     And match response == expectedOutput
